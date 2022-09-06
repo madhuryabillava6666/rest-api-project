@@ -17,8 +17,8 @@ public class EmployeeServiceImpl implements EmployeeInterface{
 	/*@Autowired
 	private ApplicationConfig applicationconfig;*/
 	
-	
-	ApplicationConfiguration applicationconfiguration;
+	@Autowired
+	private ApplicationConfiguration applicationconfiguration;
 	
 	public EmployeeServiceImpl(ApplicationConfiguration applicationconfiguration) {
 		this.applicationconfiguration = applicationconfiguration;

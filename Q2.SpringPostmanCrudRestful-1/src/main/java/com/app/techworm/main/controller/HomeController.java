@@ -38,8 +38,8 @@ public class HomeController {
 		
 		/*@Value("$(spring.datasource.username)")
 		private String springdatasourceusername;
-		@GetMapping("/getProperties")
-		public String getProperties() {return springdatasourceusername;
+		@GetMapping("/getProperties2")
+		public String getProperties2() {return springdatasourceusername;
 				}*/
 		
 		@PostMapping(value="saveEmployee")

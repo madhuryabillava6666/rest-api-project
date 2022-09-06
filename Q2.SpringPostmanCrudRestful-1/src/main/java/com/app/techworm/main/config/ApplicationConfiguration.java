@@ -5,25 +5,25 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ApplicationConfiguration {
-	@Value("$(server.port)")
+	@Value("${server.port}")
 	private String serverPort;
 	
-	@Value("$(spring.datasource.url)")
+	@Value("${spring.datasource.url}")
 	private String springdatasourceurl;
 	
-	@Value("$(spring.datasource.username)")
+	@Value("${spring.datasource.username}")
 	private String springdatasourceusername;
 	
-	@Value("$(spring.datasource.password)")
+	@Value("${spring.datasource.password}")
 	private String springdatasourcepassword;
 	
-	@Value("$(spring.jpa.show-sql)")
+	@Value("${spring.jpa.show-sql}")
 	private String springjpashowsql;
 	
-	@Value("$(spring.jpa.hibernate.ddl-auto)")
+	@Value("${spring.jpa.hibernate.ddl-auto}")
 	private String springjpahibernateddlauto;
 	
-	@Value("$(spring.jpa.properties.hibernate.dialect)")
+	@Value("${spring.jpa.properties.hibernate.dialect}")
 	private String springjpapropertieshibernatedialect;
 
 	public String getServerPort() {
