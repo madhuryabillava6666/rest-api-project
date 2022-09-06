@@ -3,6 +3,8 @@ package com.app.techworm.main.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,24 @@ public class HomeController {
 		//to create bean of implementation class
 		@Autowired
 		private EmployeeServiceImpl employeeServiceImpl;
+		
+		public HomeController(EmployeeServiceImpl employeeServiceImpl) {
+			this.employeeServiceImpl = employeeServiceImpl;
+		}
+		
+		
+		@GetMapping(value="/properties")
+		public ResponseEntity<String> getProperties() {
+			return new ResponseEntity<>(employeeServiceImpl.getProperties(), HttpStatus.OK);
+		}
+		
+		//@GetMapping(value="/properties")
+		//public String getProperties() {
+		//	return employeeServiceImpl.getProperties();
+		//}
+		
+		
+		
 		//to call save method or to save new employee
 		@PostMapping(value="saveEmployee")
 		public Employee saveEmployee(@RequestBody Employee employee) {
