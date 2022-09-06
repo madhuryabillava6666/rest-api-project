@@ -3,6 +3,7 @@ package com.app.techworm.main.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+//import com.app.config.ApplicationConfig;
 import com.app.techworm.main.model.Employee;
 import com.app.techworm.main.serviceimplementation.EmployeeServiceImpl;
 
@@ -24,25 +26,22 @@ public class HomeController {
 		//to create bean of implementation class
 		@Autowired
 		private EmployeeServiceImpl employeeServiceImpl;
-		
+		//to call save method or to save new employee
+	
 		public HomeController(EmployeeServiceImpl employeeServiceImpl) {
 			this.employeeServiceImpl = employeeServiceImpl;
 		}
-		
-		
-		@GetMapping(value="/properties")
+		@GetMapping(value="properties")
 		public ResponseEntity<String> getProperties() {
 			return new ResponseEntity<>(employeeServiceImpl.getProperties(), HttpStatus.OK);
 		}
 		
-		//@GetMapping(value="/properties")
-		//public String getProperties() {
-		//	return employeeServiceImpl.getProperties();
-		//}
+		/*@Value("$(spring.datasource.username)")
+		private String springdatasourceusername;
+		@GetMapping("/getProperties")
+		public String getProperties() {return springdatasourceusername;
+				}*/
 		
-		
-		
-		//to call save method or to save new employee
 		@PostMapping(value="saveEmployee")
 		public Employee saveEmployee(@RequestBody Employee employee) {
 			System.out.println("employee save works properly");
