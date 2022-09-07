@@ -6,8 +6,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.data.redis.core.RedisHash;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+
 @Table(name="employee_table", catalog="employee_database")
+@Getter
+@Setter
 public class Employee {
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO )
@@ -29,24 +40,7 @@ public class Employee {
 		
 	}
 	
-	public int getEmpId() {
-		return empId;
-	}
-	public void setEmpId(int empId) {
-		this.empId = empId;
-	}
-	public String getEmpName() {
-		return empName;
-	}
-	public void setEmpName(String empName) {
-		this.empName = empName;
-	}
-	public String getSkillType() {
-		return skillType;
-	}
-	public void setSkillType(String skillType) {
-		this.skillType = skillType;
-	}
+	
 	
 	
 }
