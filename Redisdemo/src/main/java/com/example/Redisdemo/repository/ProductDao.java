@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.example.Redisdemo.Appconfig.ApplicationConfig;
 import com.example.Redisdemo.entity.Product;
 
 import lombok.Data;
@@ -38,4 +39,9 @@ public class ProductDao {
          template.opsForHash().delete(HASH_KEY,id);
         return "product removed !!";
     }
+    /*@Autowired
+	private ApplicationConfig applicationconfig;
+    public String getProperties() {
+		return applicationconfig.getServerPort();
+	}*/
 }
