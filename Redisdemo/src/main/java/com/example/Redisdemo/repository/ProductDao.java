@@ -39,6 +39,10 @@ public class ProductDao {
          template.opsForHash().delete(HASH_KEY,id);
         return "product removed !!";
     }
+    public Product updateProduct(Product product){
+    	template.opsForHash().put(HASH_KEY,product.getId(),product);
+        return product;
+   }
     /*@Autowired
 	private ApplicationConfig applicationconfig;
     public String getProperties() {
