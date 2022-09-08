@@ -24,9 +24,9 @@ public class ProductDao {
         return template.opsForHash().values(HASH_KEY);
     }
 
-    public Product findProductById(int id){
+    /*public Product findProductById(int id){
         return (Product) template.opsForHash().get(HASH_KEY,id);
-    }
+    }*/
 
 
     public String deleteProduct(int id){

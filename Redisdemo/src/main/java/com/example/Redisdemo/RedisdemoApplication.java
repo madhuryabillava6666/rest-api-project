@@ -6,14 +6,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.example.Redisdemo.entity.Product;
 import com.example.Redisdemo.repository.ProductDao;
 
-import io.lettuce.core.dynamic.annotation.Value;
+
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+//@EnableSwagger2
 @RestController
 @RequestMapping("/product")
 @SpringBootApplication
@@ -32,10 +33,10 @@ public class RedisdemoApplication {
         return dao.findAll();
     }
 
-    @GetMapping("/{id}")
+    /*@GetMapping("/{id}")
     public Product findProduct(@PathVariable int id) {
         return dao.findProductById(id);
-    }
+    }*/
     @DeleteMapping("/{id}")
     public String remove(@PathVariable int id)   {
     	return dao.deleteProduct(id);
