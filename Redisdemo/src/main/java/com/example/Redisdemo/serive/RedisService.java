@@ -1,10 +1,13 @@
 package com.example.Redisdemo.serive;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 import com.example.Redisdemo.Appconfig.ApplicationConfig;
+
 
 @Service
 public class RedisService {
@@ -19,4 +22,6 @@ public class RedisService {
 	public String getProperties() {
 		return applicationconfig.getServerPort();
 	}
+	
+	
 }

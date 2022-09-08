@@ -3,14 +3,8 @@ package com.example.Redisdemo.repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
-
-import com.example.Redisdemo.Appconfig.ApplicationConfig;
 import com.example.Redisdemo.entity.Product;
-
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 
 @Data
