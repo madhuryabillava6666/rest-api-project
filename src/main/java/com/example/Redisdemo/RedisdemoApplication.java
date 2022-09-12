@@ -20,19 +20,19 @@ import java.util.Map;
 
 //@EnableSwagger2
 @RestController
-//@RequestMapping("/product")
+@RequestMapping("/product")
 @SpringBootApplication
 public class RedisdemoApplication {
 	
 	@Autowired
     private ProductDao dao;
 
-    @PostMapping("/product")
+    @PostMapping
     public Product save(@RequestBody Product product) {
         return dao.save(product);
     }
 
-   @GetMapping("/product")
+   @GetMapping
     public List<Product> getAllProducts() {
         return dao.findAll();
     }
