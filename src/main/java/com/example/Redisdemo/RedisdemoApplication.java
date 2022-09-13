@@ -22,6 +22,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/product")
 @SpringBootApplication
+@EnableSwagger2
+
 public class RedisdemoApplication {
 	
 	@Autowired
